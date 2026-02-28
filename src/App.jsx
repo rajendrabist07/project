@@ -5,6 +5,8 @@ import ShoesCollection from "./Components/ShoesCollection"
 import Service from "./Components/Service"
 import Product from "./Components/Product"
 import Brand from "./Components/Brand"
+import CultureMakersReviews from "./Components/Recognized"
+
 
 function App() {
 
@@ -18,6 +20,7 @@ function App() {
       <Service />
       <Product />
       <Brand />
+      <CultureMakersReviews />
     </>
   )
 }
