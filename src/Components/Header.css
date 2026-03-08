@@ -1,0 +1,151 @@
+/* Header.css */
+.header-wrapper {
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #e5e5e5;
+  font-family: "Inter", sans-serif; /* Assuming Inter or similar */
+}
+
+.header-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Top Bar: Search, Logo, Icons */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f6f2e6; /* Light beige from design/service component */
+  padding: 8px 12px;
+  border-radius: 4px;
+  width: 300px; /* Adjust as needed */
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  margin-left: 8px;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+/* Logo */
+.header-logo {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.logo-img {
+  height: 30px; /* Adjust based on actual logo */
+  object-fit: contain;
+}
+
+/* Icons (Right side) */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.icon-svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.5;
+}
+
+/* Navigation Bar */
+.header-nav {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 700; /* Bold as per design */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #555;
+}
+
+/* Dropdown Arrow */
+.nav-link svg {
+  width: 10px;
+  height: 10px;
+}
+
+/* Utility classes */
+.currency-selector {
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .header-nav {
+    display: none; /* Hide nav on tablet/mobile for now, or implement drawer */
+  }
+
+  .search-bar {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    display: none; /* Hide search bar on mobile, show icon only likely */
+  }
+
+  .header-logo {
+    text-align: left;
+  }
+}

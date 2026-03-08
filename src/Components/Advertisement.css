@@ -1,0 +1,42 @@
+/* Simple horizontal marquee */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #000000;
+  border-top: 1px solid #faf8f8;
+  border-bottom: 1px solid #fffdfd;
+  margin-top: -0.09rem;
+}
+.marquee__inner {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 10px 0;
+  animation: marquee-scroll 18s linear infinite;
+}
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 28px;
+  font-size: 14px;
+  color: #f9f9f9;
+}
+.marquee__link {
+  color: inherit;
+  text-decoration: none;
+}
+.marquee__link:hover {
+  text-decoration: underline;
+}
+.marquee__sep {
+  margin-left: 10px;
+  color: #fffefe;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

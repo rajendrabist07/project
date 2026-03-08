@@ -1,0 +1,189 @@
+/* Product.css */
+.product-section {
+  padding: 40px 20px;
+  max-width: 1540px; /* Match header/hero constraints */
+  margin: 0 auto;
+}
+
+/* Header Section */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.product-title {
+  font-size: 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.shop-collection-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #000;
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px; /* Slight rounding if desired, or 0 for sharp */
+  transition: background-color 0.2s;
+}
+
+.shop-collection-btn:hover {
+  background-color: #333;
+}
+
+.shop-collection-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Grid Layout */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 576px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Product Card */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  group: hover;
+}
+
+.product-image-wrapper {
+  position: relative;
+  background-color: #f7f2ef; /* Light grey background for shoe images */
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Or cover, depending on image aspect */
+  mix-blend-mode: multiply; /* Helps integrate white-bg images onto grey */
+  padding: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.product-image.main-img {
+  opacity: 1;
+}
+
+.product-image.hover-img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.product-card:hover .product-image.main-img {
+  opacity: 0;
+}
+
+.product-card:hover .product-image.hover-img {
+  opacity: 1;
+}
+
+/* Sale Badge */
+.sale-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #e41613;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 2px;
+  z-index: 2;
+}
+
+/* Product Info */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brand-icon {
+  height: 18px;
+  width: auto;
+  object-fit: contain;
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.product-sizes {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+.product-price-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.price-label {
+  color: #666;
+  font-size: 13px;
+}
+
+.price-value {
+  font-weight: 700;
+}
+
+.price-value.sale {
+  color: #e41613;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 13px;
+}

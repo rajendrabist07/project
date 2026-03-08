@@ -1,0 +1,98 @@
+.brand-section {
+  padding: 40px 20px;
+  max-width: 1540px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1a1a1a;
+}
+
+.brand-grid-spotlight {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .brand-grid-spotlight {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+.brand-card-spotlight {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-link-spotlight {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.brand-image-wrapper {
+  position: relative;
+  width: 100%;
+  /* Aspect ratio for the images */
+  aspect-ratio: 512 / 341;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.brand-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.brand-card-spotlight:hover .brand-image {
+  transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+.brand-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left align text and button */
+  gap: 12px;
+}
+
+.brand-name {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+
+.shop-collection-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  background-color: transparent;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.brand-card-spotlight:hover .shop-collection-btn {
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #fff;
+}

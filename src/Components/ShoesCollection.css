@@ -1,0 +1,112 @@
+/* Brand.css */
+
+.brand-section {
+  padding: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.brand-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: sans-serif; /* Or project's font */
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .brand-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.brand-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1; /* Keep cards square-ish */
+  border-radius: 8px; /* Optional rounded corners */
+  cursor: pointer;
+}
+
+/* Image Styling */
+.brand-image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.brand-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.brand-card:hover .brand-image {
+  transform: scale(1.1);
+}
+
+/* Overlay Gradient */
+.brand-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 60%);
+  pointer-events: none; /* Let clicks pass through to the link/button if needed */
+  z-index: 1;
+}
+
+/* Content / Button */
+.brand-content {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 2;
+}
+
+.shop-now-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  text-decoration: none; /* If it's an anchor tag */
+  border-radius: 4px;
+}
+
+.shop-now-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.arrow-icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.shop-now-btn:hover .arrow-icon {
+  transform: translateX(4px);
+}

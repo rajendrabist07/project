@@ -1,0 +1,166 @@
+/* Service.css */
+
+.service-section {
+  background-color: #f6f2e6; /* Light beige/off-white background */
+  padding: -1rem 0rem;
+  width: 100%;
+}
+
+.service-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+@media (min-width: 768px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .service-grid {
+    grid-template-columns: repeat(4, 1fr);
+    border: none;
+  }
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.2rem;
+  border-bottom: 1px solid #e5e5e5; /* Light grey border */
+}
+
+/* Responsive Borders */
+@media (min-width: 768px) {
+  .service-item:nth-child(odd) {
+    border-right: 1px solid #e5e5e5;
+  }
+
+  .service-item:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .service-item {
+    border-bottom: none;
+    border-right: 1px solid #e5e5e5;
+  }
+
+  .service-item:last-child {
+    border-right: none;
+  }
+}
+
+/* Icon Styles with Corner Borders */
+.icon-container {
+  position: relative;
+  padding: 10px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Corner Borders created with pseudo-elements */
+.icon-container::before,
+.icon-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #a1a1a1;
+  pointer-events: none;
+}
+
+/* Clip the borders to create the corner effect 
+   We use masking or simpler individual elements if needed. 
+   Here is a trick using 4 spans for exact control or just simple borders if the design allows full box.
+   The original design has gaps. Let's use the span approach for precision to match "corner-border".
+*/
+
+.corner-border-box {
+  position: relative;
+  padding: 8px;
+  display: inline-block;
+}
+
+.corner {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: #a1a1a1;
+  border-style: solid;
+  border-width: 0;
+}
+
+.corner.top-left {
+  top: 0;
+  left: 0;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-top-left-radius: 2px;
+}
+
+.corner.top-right {
+  top: 0;
+  right: 0;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-top-right-radius: 2px;
+}
+
+.corner.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-bottom-left-radius: 2px;
+}
+
+.corner.bottom-right {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+  border-bottom-right-radius: 2px;
+}
+
+/* Content Styles */
+.service-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.service-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  letter-spacing: 0.05em;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.service-description {
+  font-size: 0.85rem;
+  color: #444444;
+  margin: 0;
+  line-height: 1.4;
+}
