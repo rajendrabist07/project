@@ -21,6 +21,7 @@ function App() {
       <Product />
       <Brand />
       <CultureMakersReviews />
+      <h2>Hello My Friend</h2>
     </>
   )
 }
