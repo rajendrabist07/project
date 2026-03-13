@@ -1,32 +1,243 @@
-/* .recognized-container {
-  width: 100%;
-  height: 100vh;
-  background-color: #f8f3e8;
-  padding: 20px;
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
+/* Recognized.css - Premium Component Styles */
+
+.recognized-container {
+  background-color: #f7f5f0;
+  padding: 5rem 2rem;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  min-height: 480px;
 }
 
-.review-wrapper {
-  display: flex;
-  width: 30%;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px #5a59597d;
-}
-
-.title {
+.recognized-title {
   text-align: center;
   font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #111;
+  margin-bottom: 3rem;
+  font-family: 'Georgia', serif;
 }
 
-.reviews-box {
-  max-width: 1200px;
+/* Carousel Layout */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1440px;
   margin: 0 auto;
-  width: 30%;
-  height: 40vh;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(205, 199, 199, 0.358);
-  margin-top: 1rem;
-} */
+}
+
+.carousel-nav-btn {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  color: #111;
+  padding: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.carousel-nav-btn:disabled {
+  color: #ccc;
+  border-color: #f0f0f0;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.carousel-nav-btn:not(:disabled):hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+  transform: scale(1.05);
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Review Card */
+.review-card {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+  flex: 1 1 0;
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.star-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.review-time {
+  font-size: 0.85rem;
+  color: #888;
+  white-space: nowrap;
+}
+
+.review-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #111;
+  margin-bottom: 8px;
+  font-family: 'Georgia', serif;
+  line-height: 1.4;
+}
+
+.review-body {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.review-divider {
+  border: none;
+  border-top: 1px solid #f0f0f0;
+  margin: 0 0 16px 0;
+}
+
+.review-author-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #111;
+  flex-shrink: 0;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.author-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #111;
+}
+
+.author-verified {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.review-feedback {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.feedback-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.feedback-item:hover {
+  color: #111;
+}
+
+/* Indicators */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator-dot:hover {
+  background: #999;
+}
+
+.indicator-dot.active {
+  width: 24px;
+  background: #111;
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+  .carousel-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 16px; /* Space for scrollbar */
+  }
+  
+  .review-card {
+    min-width: 300px;
+    scroll-snap-align: start;
+  }
+  
+  .carousel-nav-btn {
+    display: none; /* Hide buttons on touch devices, rely on scroll */
+  }
+}
+
+@media (max-width: 768px) {
+  .recognized-container {
+    padding: 3rem 1rem;
+  }
+  
+  .recognized-title {
+    font-size: 1.5rem;
+  }
+}

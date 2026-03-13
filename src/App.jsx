@@ -6,6 +6,8 @@ import Service from "./Components/Service"
 import Product from "./Components/Product"
 import Brand from "./Components/Brand"
 import CultureMakersReviews from "./Components/Recognized"
+import Sponsor from "./Components/Sponsor"
+import Footer from "./Components/Footer"
 
 
 function App() {
@@ -21,7 +23,8 @@ function App() {
       <Product />
       <Brand />
       <CultureMakersReviews />
-      <h2>Hello My Friend</h2>
+      <Sponsor />
+      <Footer />
     </>
   )
 }

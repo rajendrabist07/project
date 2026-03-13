@@ -41,9 +41,9 @@ const ServiceCard = ({ service }) => {
                 <span className="corner bottom-left"></span>
                 <span className="corner bottom-right"></span>
                 <div className="icon-container">
-                    <img 
-                        src={service.icon} 
-                        alt={service.alt} 
+                    <img
+                        src={service.icon}
+                        alt={service.alt}
                         className="service-icon"
                         loading="lazy"
                     />

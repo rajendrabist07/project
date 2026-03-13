@@ -1,28 +1,33 @@
+/* Brand.css - Spotlight/Brand CSS Refactored */
+
 .brand-section {
-  padding: 40px 20px;
-  max-width: 1540px;
+  padding: 5rem 2rem;
+  max-width: 1440px;
   margin: 0 auto;
+  font-family: 'Inter', 'Roboto', sans-serif;
 }
 
 .section-title {
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 800;
-  margin-bottom: 24px;
+  margin-bottom: 3rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  color: #111;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 1rem;
 }
 
 .brand-grid-spotlight {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 2rem;
 }
 
 @media (min-width: 768px) {
   .brand-grid-spotlight {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 2.5rem;
   }
 }
 
@@ -36,63 +41,79 @@
   color: inherit;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1.5rem;
+  group: hover;
 }
 
 .brand-image-wrapper {
   position: relative;
   width: 100%;
-  /* Aspect ratio for the images */
   aspect-ratio: 512 / 341;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  transition: box-shadow 0.4s ease;
+}
+
+.brand-card-spotlight:hover .brand-image-wrapper {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 .brand-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .brand-card-spotlight:hover .brand-image {
-  transform: scale(1.05); /* Subtle zoom on hover */
+  transform: scale(1.04); 
 }
 
 .brand-details {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Left align text and button */
-  gap: 12px;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .brand-name {
-  font-size: 16px;
+  font-size: 1.25rem;
   font-weight: 800;
   margin: 0;
   text-transform: uppercase;
-  color: #1a1a1a;
+  color: #111;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.brand-card-spotlight:hover .brand-name {
+  color: #555;
 }
 
 .shop-collection-btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px;
-  font-size: 12px;
+  padding: 12px 24px;
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #1a1a1a;
+  color: #111;
   background-color: transparent;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #ddd;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
   white-space: nowrap;
 }
 
 .brand-card-spotlight:hover .shop-collection-btn {
-  background-color: #1a1a1a;
-  border-color: #1a1a1a;
+  background-color: #111;
+  border-color: #111;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
